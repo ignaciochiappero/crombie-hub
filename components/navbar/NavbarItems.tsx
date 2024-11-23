@@ -61,7 +61,7 @@ const Navbar = ({ isToggled }: { isToggled: boolean }) => {
     <div className="flex justify-center gap-5 mt-10">
       <AnimatePresence>
         {isToggled &&
-          items.map((item) => (
+          items.map((item, index) => (
             <motion.li
               key={item.id}
               className="flex items-center justify-center nav-item mb-10"
@@ -69,6 +69,8 @@ const Navbar = ({ isToggled }: { isToggled: boolean }) => {
               initial="hidden"
               animate="visible"
               exit="exit"
+              custom={index}
+
               
             >
               <Link href={item.url} className="text-2xl font-[family-name:var(--blender-normal)]">

@@ -21,7 +21,7 @@ export default function Home() {
 
         <div className=" w-full flex items-center justify-center">
 
-          <span className=" text-3xl font-[family-name:var(--blender-bold)]">Bienvenidos a CrombieHub!</span>
+          <span className=" text-3xl font-[family-name:var(--blender-medium)]">Bienvenidos a CrombieHub!</span>
         </div>
 
 
