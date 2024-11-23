@@ -16,7 +16,7 @@ const HamburgerIcon = () => {
 
       <div
         id="nav-icon3"
-        className={!isOpen ? "open" : ""}
+        className={isOpen ? "open" : ""}
         onClick={toggleIcon}
       >
         <span></span>

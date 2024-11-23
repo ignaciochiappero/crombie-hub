@@ -1,8 +1,36 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = ({ isToggled }: { isToggled: boolean }) => {
-  const items = ["Home", "Products", "Services", "About"];
+
+ const items = [
+    {
+      id: 1,
+      name: "Home",
+      url: "/",
+    },
+    
+    {
+      id: 2,
+      name: "Blog",
+      url: "/blog",
+    },
+    
+    {
+      id: 3,
+      name: "Logros",
+      url: "/logros",
+    },
+
+    {
+      id: 4,
+      name: "Perfil",
+      url: "/perfil",
+    }
+  ];
+
+  
 
   // Variants para los ítems
   const navItem = {
@@ -33,19 +61,19 @@ const Navbar = ({ isToggled }: { isToggled: boolean }) => {
     <div className="flex justify-center gap-5 mt-10">
       <AnimatePresence>
         {isToggled &&
-          items.map((item, index) => (
+          items.map((item) => (
             <motion.li
-              key={item}
+              key={item.id}
               className="flex items-center justify-center nav-item mb-10"
               variants={navItem}
               initial="hidden"
               animate="visible"
               exit="exit"
-              custom={index} // Pasa el índice como valor personalizado
+              
             >
-              <p className="text-2xl font-[family-name:var(--blender-normal)]">
-                {item}
-              </p>
+              <Link href={item.url} className="text-2xl font-[family-name:var(--blender-normal)]">
+                {item.name}
+              </Link>
             </motion.li>
           ))}
       </AnimatePresence>
